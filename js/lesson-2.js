@@ -39,7 +39,7 @@ else if ((a < 0 && b >= 0) || (a >= 0 && b < 0)) {
 
 // Задание 4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
 
-var a = +prompt(Math.round(Math.random () * 15 + 0));
+var a = Math.round(Math.random () * 15 + 0);
 switch (a) {
 	case 1:
 		alert(1);
@@ -72,3 +72,44 @@ switch (a) {
 	case 15:
 		alert(15);
 }
+
+// Задание 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+
+function sum (x=0, y=0) {
+	var a = x + y;
+	return a;
+}
+
+function deduct (x=0, y=0) {
+	var b = x - y;
+	return b;
+}
+
+function multiply (x=0, y=0) {
+	var c = x * y;
+	return c;
+}
+
+function divide (x=0, y=0) {
+	var d = x / y;
+	return d;
+}
+
+var a = 2 * sum(2,10);
+alert(a);
+
+var b = 10 * deduct(32,17);
+alert(b);
+
+var c = 4 * multiply(2,9);
+alert(c);
+
+var d = 7 * divide(42,21);
+alert(d);
+
+/* Задание 6.Реализовать функцию с тремя параметрами: 
+function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3)
+и вернуть полученное значение (использовать switch).*/
+
+// Так и не сообразил, как корректно реализовать
