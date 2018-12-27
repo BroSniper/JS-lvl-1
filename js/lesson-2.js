@@ -92,19 +92,24 @@ function multiply (x=0, y=0) {
 
 function divide (x=0, y=0) {
 	var d = x / y;
-	return d;
+	if (y != 0) {
+		return d;
+	}
+	else {
+		alert("На 0 делить нельзя!");
+	}
 }
 
-var a = 2 * sum(2,10);
+var a = 2 * sum (2,10);
 alert(a);
 
-var b = 10 * deduct(32,17);
+var b = 10 * deduct (32,17);
 alert(b);
 
-var c = 4 * multiply(2,9);
+var c = 4 * multiply (2,9);
 alert(c);
 
-var d = 7 * divide(42,21);
+var d = 7 * divide (42,21);
 alert(d);
 
 /* Задание 6.Реализовать функцию с тремя параметрами: 
@@ -112,4 +117,22 @@ function mathOperation(arg1, arg2, operation), где arg1, arg2 – значе�
 В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3)
 и вернуть полученное значение (использовать switch).*/
 
-// Так и не сообразил, как корректно реализовать
+function mathOperation (x, y, operation) {
+	switch (operation) {
+		case "sum":
+			return sum (2,5);
+			break;
+		case "deduct":
+			return deduct (10,2);
+			break;
+		case "multiply":
+			return multiply (10,5);
+			break;
+		case "divide":
+			return divide (25,5);
+			break;
+		default:
+			return NaN;
+			break;		
+	}
+}
