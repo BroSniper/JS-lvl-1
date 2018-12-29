@@ -4,8 +4,9 @@ while(p <= 100) {
 	document.write (p + " ");
 	p++;
 }
+
 if (p = 100) {
-	document.write("<br>"+"<br>");
+		document.write("<br>"+"<br>");
 }
 
 /* Задание 2. С помощью цикла do…while написать функцию для вывода чисел от 0 до 10, чтобы результат выглядел так:
@@ -17,20 +18,16 @@ if (p = 100) {
  10 – четное число*/
 
 var n = 0;
-do {
- 	document.write(n + "- это ноль" + "<br>");
-} while (n = 0);
 
 do {
+	if (n % 2 !== 0) {
+		document.write(n + "- это нечетное число" + "<br>");
+	}
+	else if (n !== 0 && n % 2 === 0) {
+		document.write(n + "- это четное число" + "<br>");
+	}
+	else {
+		document.write(n + "- это ноль" + "<br>");
+	}
 	n++;
- 	document.write(n + "- это четное число" + "<br>")
-} while (n%2==0, n < 10);
-
-do {
-	n++;
- 	document.write(n + "- это нечетное число" + "<br>")
-} while (n < 10);
-
-
-
-
+} while (n < 11);
