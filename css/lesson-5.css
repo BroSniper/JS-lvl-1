@@ -1,0 +1,65 @@
+* {margin: 0; padding: 0; border: 0; outline: 0;}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 1000px;
+}
+
+body {
+	width: 70%;
+	margin: 0 auto;
+	font-family: Consolas, Courier, monospace;
+}
+
+a {
+	text-decoration: none;
+	color: red;
+}
+
+a:hover {
+	color: green;
+}
+
+table, tr, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 0px;
+}
+
+table {
+	border: 3px solid black;
+	margin: 20px auto;
+}
+
+tr {
+	height: 64px;
+}
+
+tr:first-child {
+	transform: rotate(180deg);
+} 
+
+
+td {
+	vertical-align: middle;
+	text-align: center;
+	width: 64px;
+}
+
+.boardFigures {
+	font-size: 44px;
+}
+
+.boardNumbers,
+.boardNumbers2,
+.boardLetters {
+	font-size: 14px;
+	color: black;
+}
+
+.boardNumbers2 {
+	transform: rotate(180deg);
+}
