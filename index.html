@@ -2,9 +2,81 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<script src="./js/lesson-2.js"></script>
-	<title>Document</title>
+	<link rel="stylesheet" href="./css/lesson-5.css">
+	<title>Взаимодействие с DOM</title>
 </head>
 <body>
+	<script>
+
+		var pasteTd, figuresWhite, figresBlack;
+
+		function startScript() {
+			var resultBlock = document.getElementById('resultBlock');
+
+				figuresWhite = [
+					['&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;'],
+					['&#9814;', '&#9816;', '&#9815;', '&#9813;', '&#9812;', '&#9815;', '&#9816;', '&#9814;']
+				];
+
+				figuresBlack = [
+					['&#9820;', '&#9822;', '&#9821;', '&#9819;', '&#9818;', '&#9821;', '&#9822;', '&#9820;'],
+					['&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;']
+				];
+
+			var boardTable = document.createElement('table');
+  			resultBlock.appendChild(boardTable);
+			for (var row = 1; row <= 10; row++) {
+				var boardTr = document.createElement('tr');
+	  			boardTable.appendChild(boardTr);
+
+	  			for (var col = 1; col <= 10; col++) {
+					var boardTd = document.createElement('td');
+					pasteTd = '';
+
+					if (row > 1 && row < 10 && (col == 1)) {
+						boardTd.className = 'boardNumbers';
+						pasteTd+= 8 - row + 2;
+					}
+
+					if (row > 1 && row < 10 && (col == 10)) {
+						boardTd.className = "boardNumbers2";
+						pasteTd+= 1 + row - 2 ;
+					}
+
+					if (col > 1 && col < 10) {
+
+						if (((row%2 != 0 && col%2 == 0) || (row%2 == 0 && col%2 != 0)) && (row > 1 && row < 10)) {
+							boardTd.style.background = 'rgba(0,0,0,0.8)';
+						}
+
+						if (row == 1 || row == 10) {
+							boardTd.className = 'boardLetters';
+							pasteTd+= '&#' + (65 + col - 2);
+						}
+
+						if (row == 8 || row == 9) {
+							boardTd.className = 'boardFigures';
+							pasteTd+= figuresWhite[row-8][col-2];
+						}
+
+						if (row == 2 || row == 3) {
+							boardTd.className = 'boardFigures';
+							pasteTd+= figuresBlack[row-2][col-2];
+						}
+					}
+					boardTd.innerHTML = pasteTd;
+					boardTr.appendChild(boardTd);
+				}
+			}
+		}
+	</script>
+
+	<p>
+		<a href="javascript:void(0);" onclick="startScript();">Сгенерировать шахматную доску</a>
+	</p>
+
+	<div id="resultBlock">
+
+	</div>
 </body>
 </html>
